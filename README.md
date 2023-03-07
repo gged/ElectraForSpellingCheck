@@ -89,9 +89,9 @@ python preprocess.py --sentence_file data/sentences.txt --common_characters_file
 生成的训练样本集示例（data/train.txt）如下：
 
 ```
-《规划》指出，建设数字中国是数字时段推进中国式现代化的重要引擎，是构筑国家竞争新潮势的有力支撑。	40	潮	17	段
-加快数字中国迁设，对全面建设社会主义现代化国家、全面推进中华民族伟大复兴具有重要意义和深远影响。	6	迁
-办好数句中国建设峰会等众大活动，举办数字领域高规格国内国际系列赛事，推动数字化理念深入人心，营造全社会共同关注、积极参与数字中国谴设的良好氛围。    11	众	3	句	64	谴
+《规划》指出，建设数字中国是数字时怠推进中国式现代化的重要引擎，是构筑国家竞争新潮势的有力支撑。    40  潮  17  怠
+加快数字中国双设，对全面建设社会主义现代化国家、全面推进中华民族伟大复兴具有重要意义和深远影响。    6   双
+办好数句中国建设峰会等俊大活动，举办数字领域高规格国内国际系列赛事，推动数字化理念深入人心，营造全社会共同关注、积极参与数字中国谴设的良好氛围。    11  俊  3   句  64  谴
 ```
 
 可使用 preprocess.py 基于自己的语料库构造训练样本集。
@@ -245,7 +245,7 @@ global step 240/50119, epoch: 1, batch: 240, lr: 0.0000096000, loss: 2.0506, spe
 使用 detect.py 在单个句子上进行测试：
 
 ```shell
-python detect.py --model_file checkpoint/base_warmup_5000_lr_1e-4_epochs_3/pytorch_model.bin --vocab_file data/vocab.txt --do_lower_case
+python detect.py --model_file checkpoint/pytorch_model.bin --vocab_file data/vocab.txt --do_lower_case
 ```
 
 ```

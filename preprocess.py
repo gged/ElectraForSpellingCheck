@@ -167,14 +167,14 @@ def do_mask(sentence, args, model):
         
         p = random.random()
         # electra generator mask
-        if p <= 0.3:
+        if p <= 0.2:
             mask = electra_generator_mask(sent_list, index, args, model)
             if not mask:
                 continue
             indexes.append(index)
             chars.append(mask)
         # homophone mask
-        elif p > 0.3 and p <= 0.6:
+        elif p > 0.2 and p <= 0.5:
             if c in args.phonetics:
                 mask = random.choice(args.phonetics[c])
             else:
@@ -184,7 +184,7 @@ def do_mask(sentence, args, model):
             indexes.append(index)
             chars.append(mask)
         # near-phonetic mask
-        elif p > 0.6 and p <= 0.7:
+        elif p > 0.5 and p <= 0.65:
             if c in args.near_phonetics:
                 mask = random.choice(args.near_phonetics[c])
             elif c in args.phonetics:
@@ -196,7 +196,7 @@ def do_mask(sentence, args, model):
             indexes.append(index)
             chars.append(mask)
         # similar mask 1
-        elif p > 0.7 and p <= 0.75:
+        elif p > 0.65 and p <= 0.75:
             if c in args.similars1:
                 mask = random.choice(args.similars1[c])
             else:
